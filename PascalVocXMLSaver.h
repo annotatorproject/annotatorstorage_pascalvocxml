@@ -5,8 +5,7 @@
 /************************************************************
  PascalVocXMLSaver class header
  ************************************************************/
-#include <AnnotatorLib/Saver/AbstractSaver.h>
-#include <AnnotatorLib/Saver/Pkg_Saver.h>
+#include <AnnotatorLib/Storage/AbstractSaver.h>
 #include <AnnotatorLib/annotatorlib_api.h>
 
 #include <Poco/AutoPtr.h>
@@ -22,7 +21,7 @@ class Frame;
  *
  */
 class ANNOTATORLIB_API PascalVocXMLSaver
-    : public AnnotatorLib::Saver::AbstractSaver {
+    : public AnnotatorLib::Storage::AbstractSaver {
  public:
   void saveFrame(const AnnotatorLib::Session *session,
                  const shared_ptr<AnnotatorLib::Frame> frame);

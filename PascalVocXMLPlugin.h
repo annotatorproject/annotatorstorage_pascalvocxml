@@ -15,8 +15,8 @@ class PascalVocXMLPlugin : public AnnotatorLib::Storage::StoragePlugin {
   virtual bool hasSaver();
   virtual bool hasStorage();
 
-  virtual shared_ptr<AnnotatorLib::Loader::AbstractLoader> createLoader();
-  virtual shared_ptr<AnnotatorLib::Saver::AbstractSaver> createSaver();
+  virtual shared_ptr<AnnotatorLib::Storage::AbstractLoader> createLoader();
+  virtual shared_ptr<AnnotatorLib::Storage::AbstractSaver> createSaver();
   virtual shared_ptr<AnnotatorLib::Storage::AbstractStorage> createStorage();
 };
 

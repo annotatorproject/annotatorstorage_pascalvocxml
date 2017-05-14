@@ -14,12 +14,12 @@ bool PascalVocXMLPlugin::hasSaver() { return true; }
 
 bool PascalVocXMLPlugin::hasStorage() { return false; }
 
-shared_ptr<AnnotatorLib::Loader::AbstractLoader>
+shared_ptr<AnnotatorLib::Storage::AbstractLoader>
 PascalVocXMLPlugin::createLoader() {
   return nullptr;
 }
 
-shared_ptr<AnnotatorLib::Saver::AbstractSaver>
+shared_ptr<AnnotatorLib::Storage::AbstractSaver>
 PascalVocXMLPlugin::createSaver() {
   return std::make_shared<PascalVocXMLSaver>();
 }
