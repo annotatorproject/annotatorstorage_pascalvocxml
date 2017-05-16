@@ -107,6 +107,15 @@ void PascalVocXMLSaver::saveFrame(const AnnotatorLib::Session *session,
   segmented->appendChild(document->createTextNode("0"));
   root->appendChild(segmented);
 
+  // attributes
+  for (auto &attribute : frame->getAttributes()) {
+    Poco::AutoPtr<Poco::XML::Element> attrElement =
+        document->createElement(attribute.second->getName());
+    attrElement->appendChild(
+        document->createTextNode(attribute.second->getValue()->toString()));
+    root->appendChild(attrElement);
+  }
+
   // object
   for (auto &pair : session->getObjects()) {
     if (session->getAnnotation(frame, pair.second))  // appears in frame?
